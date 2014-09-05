@@ -43,11 +43,11 @@ lookup(_,leaf) ->
   false;
 lookup(K,{node,L,KN,VN,R}) ->
   if K<KN ->
-      lookup(K,R);
+      lookup(K,L);
      K==KN ->
       {K,VN};
      K>KN ->
-      lookup(K,L)
+      lookup(K,R)
   end.
 
 %% State machine
